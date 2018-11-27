@@ -1,13 +1,13 @@
 <div class="container">
   <nav>
     <ul>
-      <ContactItem />
-      <li>
-        <a>
-          <h4>Tomster</h4>
-          <p>tomster@emberjs.com</p>
-        </a>
-      </li>
+      <ContactItem @name="Zoey" @email="zoey@emberjs.com"/>
+
+      <!-- Attributes can be indented too -->
+      <ContactItem
+        @name="Tomster"
+        @email="tomster@emberjs.com"
+      />
     </ul>
   </nav>
 </div>
