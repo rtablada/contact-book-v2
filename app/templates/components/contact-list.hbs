@@ -1,0 +1,13 @@
+<div>
+  <h2>{{this.listTitle}}</h2>
+  <ul>
+    {{#each this.contacts}}
+      <ContactItem @name="Zoey" @email="zoey@emberjs.com"/>
+    {{/each}}
+
+    <ContactItem
+      @name="Tomster"
+      @email="tomster@emberjs.com"
+    />
+  </ul>
+</div>
