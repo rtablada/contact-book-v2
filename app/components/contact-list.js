@@ -4,16 +4,15 @@ export default class ContactList extends Component {
   constructor() {
     super(...arguments);
 
-    this.listTitle = 'My Contacts';
-    this.contacts = [
-      {
-        name: 'Zoey',
-        email: 'zoey@emberjs.com',
-      },
-      {
-        name: 'Tomster',
-        email: 'tomster@emberjs.com',
-      },
-    ];
+    this.set('listTitle', 'My Contacts');
+    this.set('contacts', []);
+    this.set('loading', true);
+
+    fetch('http://ember-contact-book-api.herokuapp.com/people')
+      .then(res => res.json())
+      .then(contacts => {
+        this.set('loading', false);
+        this.set('contacts', contacts)
+      });
   }
 }
